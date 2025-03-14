@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const userSchema = mongoose.Schema({
-    fullname: {
+    name: {
         type: String,
         require: true
     },
@@ -21,5 +21,5 @@ const userSchema = mongoose.Schema({
 
 // timestamps : it store cratedAt and updatedAt info 
 
-const user = mongoose.model("User", userSchema);
-export default user;
+const User = mongoose.model("User", userSchema);
+export default User;

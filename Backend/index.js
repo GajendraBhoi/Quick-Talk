@@ -4,6 +4,8 @@ import express from 'express';
 import dotenv from 'dotenv';
 import dbConnect from './config/database.js'
 import { connect } from 'mongoose';
+import router from './routes/userRoute.js'
+
 const app = express();
 
 dotenv.config();
@@ -14,6 +16,8 @@ app.use(express.json());
 
 // connect database 
 dbConnect();
+
+app.use('/user', router);
 
 app.get('/', (req, res) => {
     res.send("Hello Baby")
